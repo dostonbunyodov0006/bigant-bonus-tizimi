@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>BIGANT бонус қўлланмаси</title>
+<style>:root{padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=PT+Sans:wght@400;700&display=swap">
+<style>
+  /* Тартиб: аввал «ким сиз», кейин фақат ўша одамга тегишли қадамлар — бир экранда битта фикр */
+  :root {
+    --qogoz: #f3f1ec;
+    --siyoh: #1b2430;
+    --past: #5d6a77;
+    --karta: #ffffff;
+    --chiziq: #d9d5cc;
+    --kehr: #c8551f;
+    --yashil: #2f6f4e;
+    --qizil: #a8331f;
+    --soya: 0 1px 2px rgba(27,36,48,.06), 0 8px 24px rgba(27,36,48,.07);
+    --bosh: "Oswald", "Arial Narrow", system-ui, sans-serif;
+    --matn: "PT Sans", system-ui, -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --qogoz: #14181d; --siyoh: #eceae5; --past: #9aa5b1; --karta: #1c2229;
+      --chiziq: #2c343d; --kehr: #ef7a43; --yashil: #57ab7d; --qizil: #e06a52;
+      --soya: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --qogoz: #14181d; --siyoh: #eceae5; --past: #9aa5b1; --karta: #1c2229;
+    --chiziq: #2c343d; --kehr: #ef7a43; --yashil: #57ab7d; --qizil: #e06a52;
+    --soya: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--qogoz); color: var(--siyoh);
+    font-family: var(--matn); font-size: clamp(17px, 1.8vw, 22px); line-height: 1.45;
+    display: flex; flex-direction: column;
+    /* узун сўз кесилиб қолмасин, қутидан чиқиб кетмасин */
+    overflow-wrap: break-word; word-break: normal; hyphens: manual;
+  }
+  * { min-width: 0; }
+  .sahifa { flex: 1; display: flex; flex-direction: column; padding-block: 14px 0; padding-inline: 16px;
+            max-width: 860px; width: 100%; margin: 0 auto; box-sizing: border-box; }
+
+  .progress { display: flex; gap: 6px; align-items: center; margin-bottom: 20px; min-height: 5px; }
+  .nuqta { height: 5px; flex: 1; border-radius: 99px; background: var(--chiziq); transition: background .25s; }
+  .nuqta.faol { background: var(--kehr); }
+  .nuqta.otgan { background: color-mix(in srgb, var(--kehr) 45%, var(--chiziq)); }
+
+  .qadam { display: flex; flex-direction: column; gap: 18px; flex: 1; animation: kir .3s ease both;
+           padding-bottom: 12px; justify-content: safe center; }
+  @keyframes kir { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .qadam { animation: none; } }
+
+  .yorliq { font-family: var(--bosh); font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+            font-size: clamp(12px, 1.2vw, 14px); color: var(--kehr); }
+  h1 { font-family: var(--bosh); font-weight: 600; font-size: clamp(30px, 5.2vw, 56px); line-height: 1.14;
+       margin: 0; text-wrap: balance; }
+  h2 { font-family: var(--bosh); font-weight: 600; font-size: clamp(25px, 3.8vw, 40px); line-height: 1.18; margin: 0; text-wrap: balance; }
+  p { margin: 0; max-width: 42ch; }
+  .yirik { font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; }
+  .past { color: var(--past); }
+
+  .karta { background: var(--karta); border: 1px solid var(--chiziq); border-radius: 14px; padding: 20px; box-shadow: var(--soya); }
+  .qator { display: flex; gap: 14px; flex-wrap: wrap; }
+  .qator > * { flex: 1 1 250px; min-width: 0; }
+
+  .soat { font-family: var(--bosh); font-weight: 600; font-variant-numeric: tabular-nums;
+          font-size: clamp(32px, 5vw, 52px); line-height: 1; letter-spacing: .01em; }
+  .tugma-namuna { display: inline-flex; align-items: center; gap: 10px; background: var(--kehr); color: #fff;
+    font-family: var(--bosh); font-size: clamp(19px, 2.2vw, 25px); letter-spacing: .02em;
+    padding: 14px 24px; border-radius: 12px; box-shadow: var(--soya); }
+  .tugma-namuna.tun { background: #2c3e52; }
+  .tugma-namuna.gps { background: var(--yashil); }
+
+  .misol { display: flex; flex-direction: column; gap: 8px; font-variant-numeric: tabular-nums; }
+  .misol .qator2 { display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+                   font-size: clamp(16px, 1.7vw, 20px); flex-wrap: wrap; }
+  .misol .qator2 span:first-child { flex: 1 1 60%; }
+  .misol .qator2 span:last-child { flex: none; white-space: nowrap; font-weight: 700; }
+  .pul { font-family: var(--bosh); font-weight: 600; font-size: clamp(30px, 4.6vw, 46px); color: var(--yashil);
+         line-height: 1.1; margin-top: 6px; }
+
+  ul { margin: 0; padding-left: 1.05em; display: flex; flex-direction: column; gap: 10px; max-width: 46ch; }
+  li::marker { color: var(--kehr); }
+
+  .ogoh { border-left: 5px solid var(--qizil); background: color-mix(in srgb, var(--qizil) 9%, var(--karta));
+          padding: 16px 18px; border-radius: 0 12px 12px 0; max-width: 48ch; }
+  .yaxshi { border-left: 5px solid var(--yashil); background: color-mix(in srgb, var(--yashil) 10%, var(--karta));
+            padding: 16px 18px; border-radius: 0 12px 12px 0; max-width: 48ch; }
+
+  /* босқичлар — 1 · 2 · 3 · 4 */
+  .bosqichlar { display: flex; gap: 10px; flex-wrap: wrap; }
+  .bosqichlar > div { flex: 1 1 165px; min-width: 0; display: flex; align-items: center; gap: 10px;
+    background: var(--karta); border: 1px solid var(--chiziq); border-radius: 12px; padding: 14px 16px; box-shadow: var(--soya); }
+  .bosqichlar i { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--kehr); color: #fff;
+    font-family: var(--bosh); font-style: normal; font-weight: 600; display: grid; place-items: center; font-size: 18px; }
+  .bosqichlar span { font-size: clamp(15px, 1.6vw, 19px); line-height: 1.25; }
+  .belgi { font-family: var(--bosh); font-size: clamp(19px, 2.2vw, 24px); letter-spacing: .02em; }
+  .yashilB { color: var(--yashil); }
+  .qizilB { color: var(--qizil); }
+
+  /* ким сиз — иккита катта танлов: оқ карта, ранг фақат чап чизиқ ва белгида */
+  .rollar { display: flex; gap: 16px; flex-wrap: wrap; }
+  .rollar button { flex: 1 1 280px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+    text-align: left; padding: 24px 24px 24px 22px; border-radius: 16px;
+    background: var(--karta); color: var(--siyoh); border: 1px solid var(--chiziq);
+    border-left: 6px solid var(--kehr); box-shadow: var(--soya); }
+  .rollar button[data-tanla="haydovchi"] { border-left-color: var(--yashil); }
+  .rollar button:hover { border-color: var(--kehr); }
+  .rollar button[data-tanla="haydovchi"]:hover { border-color: var(--yashil); }
+  .rollar .ism { font-size: clamp(23px, 3vw, 32px); line-height: 1.18; }
+  .rollar .izoh { font-family: var(--matn); font-size: clamp(16px, 1.7vw, 19px); color: var(--past);
+                  letter-spacing: 0; line-height: 1.4; font-weight: 400; }
+
+  /* исм сўраш ойнаси */
+  .oyna { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 16px; z-index: 50; }
+  .oynaIch { background: var(--karta); border: 1px solid var(--chiziq); border-radius: 16px; padding: 20px;
+    width: min(520px, 100%); max-height: 84vh; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--soya); }
+  .field input { width: 100%; box-sizing: border-box; font: inherit; padding: 12px 14px; border-radius: 10px;
+    border: 1px solid var(--chiziq); background: var(--qogoz); color: var(--siyoh); }
+  .ismRoyxat { overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+  .ismRoyxat button { width: 100%; text-align: left; padding: 12px 14px; font-size: clamp(16px,1.8vw,19px); }
+
+  .boshqaruv { position: sticky; bottom: 0; background: linear-gradient(to top, var(--qogoz) 62%, transparent);
+    padding-block: 14px; padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    display: flex; gap: 10px; align-items: center; }
+  button { font: inherit; cursor: pointer; border-radius: 12px; border: 1px solid var(--chiziq);
+           background: var(--karta); color: var(--siyoh); padding: 14px 22px; font-family: var(--bosh);
+           font-size: clamp(17px, 1.8vw, 20px); letter-spacing: .02em; transition: transform .12s, filter .15s;
+           white-space: normal; overflow-wrap: break-word; line-height: 1.25; }
+  button:hover { filter: brightness(1.04); }
+  button:active { transform: translateY(1px); }
+  button:focus-visible { outline: 3px solid var(--kehr); outline-offset: 2px; }
+  button.asos { background: var(--kehr); color: #fff; border-color: transparent; }
+  button.yashil { background: var(--yashil); color: #fff; border-color: transparent; }
+  button.mayda { padding: 10px 14px; font-size: 15px; }
+  button[disabled] { opacity: .35; cursor: default; }
+  .osish { flex: 1; }
+  .sanoq { font-variant-numeric: tabular-nums; color: var(--past); font-size: 15px; }
+
+  .javoblar { display: flex; gap: 12px; flex-wrap: wrap; }
+  .javoblar button { flex: 1 1 210px; padding-block: 20px; font-size: clamp(19px, 2.2vw, 24px); }
+
+  @media (max-width: 560px) {
+    .boshqaruv { flex-wrap: wrap; }
+    .sanoq { order: 3; width: 100%; text-align: center; }
+  }
+</style>
+
+<div class="sahifa">
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- 0 · ким сиз -->
+  <section class="qadam" data-rol="bosh">
+    <span class="yorliq">BIGANT · ҳурматли ходимлар учун</span>
+    <h1>Қайси бўлимда ишлайсиз?</h1>
+    <p class="yirik">Бу қўлланмада қўшимча ишлаган вақтингиз учун бонус қандай ёзилиши тушунтирилган. Илтимос, ўз бўлимингизни танланг — шунда фақат Сизга тегишли қисми кўрсатилади.</p>
+    <div class="rollar">
+      <button data-tanla="xodim">
+        <span class="ism">🔧 Цех · Грузчик · Дўкон</span>
+        <span class="izoh">Иш вақтингизни иловадаги тугма орқали Сиз ўзингиз ёзиб қўясиз.</span>
+      </button>
+      <button data-tanla="haydovchi">
+        <span class="ism">🚚 Ҳайдовчи</span>
+        <span class="izoh">Машинада ишлайсиз, юк олиб келасиз ва топширасиз.</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ХОДИМ -->
+  <section class="qadam" data-rol="xodim" hidden>
+    <span class="yorliq">Цех · грузчик · дўкон</span>
+    <h1>Қўшимча ишлаган вақтингиз бекор кетмайди</h1>
+    <p class="yirik">Расмий иш вақтимиз эрталаб соат <b>9:00</b> дан кечқурун соат <b>18:00</b> гача. Шу вақтдан ташқарида ишлаб қолсангиз, ҳар бир дақиқангиз учун бонус ҳисобланади ва ойлигингизга қўшиб берилади.</p>
+    <div class="yaxshi">Бунинг учун иловада иккита тугма бор: бири эрталабки, иккинчиси кечқурунги вақт учун.</div>
+  </section>
+
+  <section class="qadam" data-rol="xodim" hidden>
+    <span class="yorliq">Эрталаб</span>
+    <h2>Соат 9 дан олдин келдингизми?</h2>
+    <p class="yirik">Агар эрталаб соат 9:00 дан олдин ишга келсангиз, келган заҳотингиз иловани очиб, қуйидаги тугмани босиб қўйинг:</p>
+    <p><span class="tugma-namuna">☀️ Ишни бошладим</span></p>
+    <div class="qator">
+      <div class="karta">
+        <div class="soat">05:00 – 09:00</div>
+        <p class="past" style="margin-top:10px">Тугма фақат шу вақт оралиғида кўринади.</p>
+      </div>
+      <div class="karta misol">
+        <span class="yorliq">Мисол</span>
+        <div class="qator2"><span>Соат 7:30 да келдингиз</span><span>7:30</span></div>
+        <div class="qator2"><span>Иш вақти бошланди</span><span>9:00</span></div>
+        <div class="qator2"><span>Ортиқча ишладингиз</span><span>1 соат 30 дақиқа</span></div>
+        <div class="pul">52 500 сўм</div>
+      </div>
+    </div>
+    <ul>
+      <li>Тугмани босганингиздан сўнг вақтингиз ёзиб олинади, гуруҳга хабар чиқади — бошқа ҳеч нарса қилиш шарт эмас.</li>
+      <li>Ёнингизда ишлаган ҳамкасбларингизни рўйхатдан белгилаб қўйинг, уларга ҳам худди шу вақт ёзилади.</li>
+      <li>Тугма тепасидаги майдонга қандай иш қилганингизни ёзиб қолдиринг. Масалан: «цехни тозаладик».</li>
+    </ul>
+  </section>
+
+  <section class="qadam" data-rol="xodim" hidden>
+    <span class="yorliq">Кечқурун</span>
+    <h2>Соат 6 дан кейин ишлаб қолдингизми?</h2>
+    <p class="yirik">Агар кечқурун соат 18:00 дан кейин ишлаб қолсангиз, ишдан кетаётганингизда қуйидаги тугмани босинг:</p>
+    <p><span class="tugma-namuna tun">🌙 Ишни тугатдим</span></p>
+    <div class="qator">
+      <div class="karta">
+        <div class="soat">18:01 – 05:00</div>
+        <p class="past" style="margin-top:10px">Тугма фақат шу вақт оралиғида кўринади.</p>
+      </div>
+      <div class="karta misol">
+        <span class="yorliq">Мисол</span>
+        <div class="qator2"><span>Иш вақти тугади</span><span>18:00</span></div>
+        <div class="qator2"><span>20:10 да босдингиз</span><span>20:10</span></div>
+        <div class="qator2"><span>Ортиқча ишладингиз</span><span>2 соат 10 дақиқа</span></div>
+        <div class="pul">86 667 сўм</div>
+      </div>
+    </div>
+    <div class="ogoh"><b>Илтимос, эътибор беринг.</b> Ишлаган вақтингизни «Рағбатлантириш» бўлимига ёзманг — у ерга ёзилган хабардан пул ҳисобланмайди. Тугма эрталаб соат 5:00 да ёпилади, шунинг учун кечаси кеч ишласангиз ҳам ўша куннинг ўзида босиб қўйишингизни сўраймиз.</div>
+  </section>
+
+  <section class="qadam" data-rol="xodim" data-sinov="1" hidden>
+    <span class="yorliq">Текширув</span>
+    <h1>Тушундингизми?</h1>
+    <p class="yirik">Эрталаб эрта келсангиз — <b>«Ишни бошладим»</b>.<br>Кечқурун кеч кетсангиз — <b>«Ишни тугатдим»</b>.</p>
+    <p class="past">Тушунмаган жойингиз бўлса, ҳеч тортинманг — қайтадан кўрсатамиз.</p>
+    <div class="javoblar">
+      <button class="yashil" data-javob="ha">✅ Тушундим</button>
+      <button data-javob="yoq">🔁 Тушунмадим</button>
+    </div>
+  </section>
+
+  <section class="qadam" data-rol="xodim" data-sodda="1" hidden>
+    <span class="yorliq">Яна бир бор</span>
+    <h2>Фақат иккита тугма</h2>
+    <div class="qator">
+      <div class="karta">
+        <p style="margin:0 0 12px"><span class="tugma-namuna">☀️ Ишни бошладим</span></p>
+        <p class="yirik">Эрталаб <b>9 дан олдин</b> келдингиз → босинг.</p>
+      </div>
+      <div class="karta">
+        <p style="margin:0 0 12px"><span class="tugma-namuna tun">🌙 Ишни тугатдим</span></p>
+        <p class="yirik">Кечқурун <b>6 дан кейин</b> кетяпсиз → босинг.</p>
+      </div>
+    </div>
+    <ul>
+      <li>Тугма кўринмаса, демак ҳали вақти келмаган: эрталабкиси соат 9 дан кейин, кечқурунгиси соат 6 гача кўринмайди.</li>
+      <li>Ҳамкасбларингизни белгилашни унутманг, акс ҳолда уларга бонус ёзилмай қолади.</li>
+    </ul>
+  </section>
+
+  <!-- ҲАЙДОВЧИ -->
+  <section class="qadam" data-rol="haydovchi" hidden>
+    <span class="yorliq">Ҳайдовчилар</span>
+    <h1>Тошкент шаҳар ичида бўлганингизда тугма босишингиз шарт эмас</h1>
+    <p class="yirik">Қўшимча ишлаган соатингиз <b>юк расмингиз орқали</b> ҳисобланади. Кечқурун соат <b>18:00</b> дан кейин ишлаб қолсангиз, ўша куни ташлаган <b>энг охирги расмингиз</b> вақтигача бўлган вақт бонусга ёзилади.</p>
+    <div class="karta misol" style="max-width:460px">
+      <span class="yorliq">Мисол</span>
+      <div class="qator2"><span>Иш вақти тугади</span><span>18:00</span></div>
+      <div class="qator2"><span>20:10 да охирги расмни ташладингиз</span><span>20:10</span></div>
+      <div class="qator2"><span>Ортиқча ишладингиз</span><span>2 соат 10 дақиқа</span></div>
+      <div class="pul">86 667 сўм</div>
+    </div>
+    <div class="yaxshi">Расмларни ҳар доимгидек ташлайверасиз: юк олсангиз <b>LOGISTIKA</b> гуруҳига, топширсангиз <b>«Топширилган юк»</b> гуруҳига. Қолганини тизим ўзи ҳисоблайди.</div>
+  </section>
+
+  <section class="qadam" data-rol="haydovchi" hidden>
+    <span class="yorliq">Ҳайдовчилар</span>
+    <h1>Вилоятга бордингизми?</h1>
+    <p class="yirik">Вилоятга бориб, кечқурун Тошкентга қайтиб кирганингизда иловадан биргина тугма босасиз. Шунинг ўзи етарли — қолганини тизим ўзи ҳисоблайди.</p>
+    <p><span class="tugma-namuna gps">📍 Тошкентга кирдим</span></p>
+    <div class="bosqichlar">
+      <div><i>1</i><span>Тошкентга кирдингиз</span></div>
+      <div><i>2</i><span>Иловани очинг</span></div>
+      <div><i>3</i><span>Тугмани босинг</span></div>
+      <div><i>4</i><span>«Рухсат бериш» деб тасдиқлайсиз</span></div>
+    </div>
+    <p class="yirik">Экранда «✅ Тошкентга кириб тугмани босдингиз · соат 20:22» деб чиқса, демак вақтингиз ёзилди ва бонусингиз ҳисобланди.</p>
+  </section>
+
+  <section class="qadam" data-rol="haydovchi" hidden>
+    <span class="yorliq">Ҳайдовчилар</span>
+    <h2>Қачон босасиз, қачон керак эмас</h2>
+    <div class="qator">
+      <div class="karta">
+        <div class="belgi yashilB">✅ Босасиз</div>
+        <p style="margin-top:10px">Вилоятдан <b>кечқурун</b> қайтсангиз босасиз. Тугма <b>18:01 дан 05:00</b> гача кўринади.</p>
+      </div>
+      <div class="karta">
+        <div class="belgi qizilB">❌ Керак эмас</div>
+        <p style="margin-top:10px">Кундузи шаҳар ичида ишласангиз босиш шарт эмас — <b>юк расмингиз</b> ўзи ҳисоблайди.</p>
+      </div>
+    </div>
+    <div class="karta misol" style="max-width:420px">
+      <span class="yorliq">Мисол</span>
+      <div class="qator2"><span>Иш вақти тугади</span><span>18:00</span></div>
+      <div class="qator2"><span>20:22 да Тошкентга кирдингиз</span><span>20:22</span></div>
+      <div class="qator2"><span>Ортиқча ишладингиз</span><span>2 соат 22 дақиқа</span></div>
+      <div class="pul">94 667 сўм</div>
+    </div>
+    <div class="yaxshi"><b>Интернет йўқ бўлса ҳам</b> босаверинг: илова эслаб қолади, алоқа тикланганда ўзи юборади. Бонус Сиз босган вақт бўйича ёзилади. Тошкентга кирмасдан боссангиз «Рад этилди» деб чиқади — шаҳарга кирганингиздан кейин босинг.</div>
+  </section>
+
+  <section class="qadam" data-rol="haydovchi" data-sinov="1" hidden>
+    <span class="yorliq">Текширув</span>
+    <h1>Тушундингизми?</h1>
+    <p class="yirik">Ҳар бир юкка <b>расм</b>. Вилоятдан қайтсангиз — <b>«Тошкентга кирдим»</b>.</p>
+    <p class="past">Тушунмаган жойингиз бўлса, ҳеч тортинманг — қайтадан кўрсатамиз.</p>
+    <div class="javoblar">
+      <button class="yashil" data-javob="ha">✅ Тушундим</button>
+      <button data-javob="yoq">🔁 Тушунмадим</button>
+    </div>
+  </section>
+
+  <section class="qadam" data-rol="haydovchi" data-sodda="1" hidden>
+    <span class="yorliq">Яна бир бор</span>
+    <h2>Иккита иш, холос</h2>
+    <div class="qator">
+      <div class="karta">
+        <div class="belgi">📷 Ҳар юкка расм</div>
+        <p class="yirik" style="margin-top:10px">Юк олдингиз ёки топширдингиз → дарҳол гуруҳга расмини ташланг.</p>
+      </div>
+      <div class="karta">
+        <p style="margin:0 0 12px"><span class="tugma-namuna gps">📍 Тошкентга кирдим</span></p>
+        <p class="yirik">Вилоятдан кечқурун қайтдингиз → шаҳарга кирганингизда босинг.</p>
+      </div>
+    </div>
+    <ul>
+      <li>Шаҳардан ташқарига чиққан бўлсангиз, расмнинг изоҳига <b>«2х»</b> деб ёзиб қўйинг — ўша юкнинг бонуси икки баробар ҳисобланади.</li>
+      <li>Агар тугма кўринмаса, демак ҳали унинг вақти келмаган. У кечқурун соат 6 дан кейин пайдо бўлади.</li>
+    </ul>
+  </section>
+
+  <!-- ҲАММАГА -->
+  <section class="qadam" data-rol="hamma" hidden>
+    <span class="yorliq">Якун</span>
+    <h1>Бонусингизни ўзингиз кўра оласиз</h1>
+    <p class="yirik">Қанча бонус йиққанингизни хоҳлаган пайтда текшириб кўришингиз мумкин. Бунинг учун тўрт қадам:</p>
+    <div class="bosqichlar">
+      <div><i>1</i><span>Иловани очинг</span></div>
+      <div><i>2</i><span>«Бонуслар» бўлимига киринг</span></div>
+      <div><i>3</i><span>«Бугунгача Excel» тугмасини босинг</span></div>
+      <div><i>4</i><span>Файл ботдаги чатингизга келади</span></div>
+    </div>
+    <div class="yaxshi">Файл ичида бонусингиз уч хилга ажратилган: <b>ишбай</b> (ортиқча ишлаган соатларингиз), <b>юк топшириш</b> ва <b>юк олиш</b>. Ҳар бирида сана, вақт ва сумма ёзилган. Файлда фақат Сизнинг маълумотингиз бўлади.</div>
+    <p class="yirik">Меҳнатингиз учун раҳмат. Саволингиз бўлса, Раҳбар акага мурожаат қилинг.</p>
+  </section>
+
+  <!-- «Тушунмадим» босилганда: исмини ёзади -->
+  <div class="oyna" id="oyna" hidden>
+    <div class="oynaIch">
+      <h2>Исмингизни ёзинг</h2>
+      <p class="past">Кимга қайта тушунтириш кераклигини билишимиз учун.</p>
+      <div class="field"><input id="ismInput" placeholder="Масалан: Ходим03" autocomplete="off" maxlength="40"></div>
+      <button class="asos" id="ismYubor">Юбориш</button>
+      <button class="mayda" id="oynaYop">Исмсиз давом этиш</button>
+    </div>
+  </div>
+
+  <div class="boshqaruv">
+    <button id="orqaga">← Орқага</button>
+    <button class="mayda" id="rolni" hidden>↺ Ролни ўзгартириш</button>
+    <span class="osish"></span>
+    <span class="sanoq" id="sanoq"></span>
+    <button class="asos" id="oldinga">Олдинга →</button>
+  </div>
+</div>
+
+<script>
+  const hamma = [...document.querySelectorAll(".qadam")];
+  const progress = document.getElementById("progress");
+  const orqaga = document.getElementById("orqaga");
+  const oldinga = document.getElementById("oldinga");
+  const rolni = document.getElementById("rolni");
+  const sanoq = document.getElementById("sanoq");
+
+  let rol = null;            // "xodim" | "haydovchi"
+  let soddaOchiq = false;    // «Тушунмадим» босилса — содда саҳифа қўшилади
+  let joriy = 0;             // йўл ичидаги ўрин
+
+  /** Шу ролда кўрсатиладиган саҳифалар рўйхати */
+  function yol() {
+    if (!rol) return [hamma[0]];
+    return hamma.filter((s) => {
+      const r = s.dataset.rol;
+      if (r === "bosh") return false;
+      if (r === "hamma") return true;
+      if (r !== rol) return false;
+      return s.dataset.sodda !== "1" || soddaOchiq;
+    });
+  }
+
+  function chiz() {
+    const y = yol();
+    if (joriy >= y.length) joriy = y.length - 1;
+    if (joriy < 0) joriy = 0;
+    hamma.forEach((s) => { s.hidden = s !== y[joriy]; });
+
+    progress.replaceChildren();
+    y.forEach((_, i) => {
+      const d = document.createElement("span");
+      d.className = "nuqta" + (i === joriy ? " faol" : i < joriy ? " otgan" : "");
+      progress.append(d);
+    });
+
+    const boshdami = !rol;
+    progress.hidden = boshdami;          // «ким сиз» саҳифасида прогресс чизиғи керак эмас
+    sanoq.textContent = boshdami ? "" : (joriy + 1) + " / " + y.length;
+    orqaga.hidden = boshdami;
+    oldinga.hidden = boshdami || Boolean(y[joriy].dataset.sinov);
+    rolni.hidden = boshdami;
+    orqaga.disabled = joriy === 0;
+    oldinga.textContent = joriy === y.length - 1 ? "Бошидан ↺" : "Олдинга →";
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  document.querySelectorAll("[data-tanla]").forEach((b) => {
+    b.addEventListener("click", () => { rol = b.dataset.tanla; soddaOchiq = false; joriy = 0; chiz(); });
+  });
+  /* 📘 «Тушунмадим» босилса — исмини сўраймиз ва базага ёзиб қўямиз */
+  const oyna = document.getElementById("oyna");
+  const ismInput = document.getElementById("ismInput");
+
+  function davomEt(javob) {
+    if (javob === "yoq") {
+      soddaOchiq = true;
+      joriy = yol().findIndex((s) => s.dataset.sodda === "1");
+    } else {
+      soddaOchiq = false;
+      joriy = Math.min(joriy + 1, yol().length - 1);
+    }
+    chiz();
+  }
+
+  async function ismYubor() {
+    const ism = (ismInput.value || "").trim().slice(0, 40);
+    oyna.hidden = true;
+    if (ism) {
+      try {
+        await fetch("/api/qollanma/javob", {
+          method: "POST", headers: { "content-type": "application/json" },
+          body: JSON.stringify({ ism, rol }),
+        });
+      } catch { /* интернет йўқ — муҳим эмас */ }
+    }
+    ismInput.value = "";
+    davomEt("yoq");
+  }
+  document.getElementById("ismYubor").addEventListener("click", ismYubor);
+  ismInput.addEventListener("keydown", (e) => { if (e.key === "Enter") ismYubor(); });
+  document.getElementById("oynaYop").addEventListener("click", () => { oyna.hidden = true; ismInput.value = ""; davomEt("yoq"); });
+
+  document.querySelectorAll("[data-javob]").forEach((b) => {
+    b.addEventListener("click", () => {
+      if (b.dataset.javob === "yoq") { oyna.hidden = false; ismInput.focus(); return; }
+      davomEt("ha");
+    });
+  });
+
+  oldinga.addEventListener("click", () => {
+    const y = yol();
+    if (joriy === y.length - 1) { rol = null; soddaOchiq = false; joriy = 0; }
+    else joriy += 1;
+    chiz();
+  });
+  orqaga.addEventListener("click", () => { joriy -= 1; chiz(); });
+  rolni.addEventListener("click", () => { rol = null; soddaOchiq = false; joriy = 0; chiz(); });
+  document.addEventListener("keydown", (e) => {
+    if (!rol) return;
+    if ((e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") && !oldinga.hidden) { e.preventDefault(); oldinga.click(); }
+    if ((e.key === "ArrowLeft" || e.key === "PageUp") && !orqaga.disabled) { e.preventDefault(); orqaga.click(); }
+  });
+
+  chiz();
+</script>
+
+</body>
+</html>
