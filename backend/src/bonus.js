@@ -139,7 +139,7 @@ export const HODIMLAR = [
   { id: 12, nom: "Ходим12", bolim: "Ҳайдовчи", tarif: 70000, mashina: "orta", tg: 700000019 },
   { id: 13, nom: "Ходим13", bolim: "Ҳайдовчи", tarif: 40000, mashina: "kichik", tg: 700000020 },
   { id: 14, nom: "Ходим15 Газел", bolim: "Ҳайдовчи", tarif: 70000, mashina: "orta", tg: 700000021 },
-  { id: 16, nom: "Ходим15", bolim: "Ҳайдовчи", tarif: 40000, mashina: "kichik", tg: 1732723743 },
+  { id: 16, nom: "Ходим15", bolim: "Ҳайдовчи", tarif: 40000, mashina: "kichik", tg: 700000027 },
   { id: 17, nom: "Ходим15", bolim: "Ҳайдовчи", tarif: 40000, mashina: "kichik", tg: 700000022 },
   { id: 18, nom: "Ходим15", bolim: "Ҳайдовчи", tarif: 40000, mashina: "kichik", tg: 700000023 },
   { id: 19, nom: "Ходим15", bolim: "Ҳайдовчи", tarif: 40000, mashina: "kichik", tg: 700000024 },
